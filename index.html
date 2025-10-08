@@ -1,129 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>My Combined Webpage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-        /* จัดรูปแบบโดยรวม */
-        body {
-            font-family: sans-serif;
-            text-align: center; /* จัดเนื้อหาส่วนใหญ่ให้อยู่กลางหน้า */
-        }
-
-        /* การจัดรูปแบบเมนู */
-        menu {
-            display: inline-block; /* ทำให้ box ของ menu อยู่ตรงกลางได้ */
-            text-align: left;      /* แต่จัดข้อความข้างในให้อยู่ชิดซ้าย */
-            list-style-type: disc;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            padding-left: 40px;
-            color: red;
-        }
-
-        /* การจัดรูปแบบตาราง */
-        table {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-        }
-
-        /* การจัดรูปแบบสไลด์โชว์ */
-        .mySlides {
-            display: none;
-        }
-        .w3-content {
-            max-width: 600px; /* จำกัดความกว้างของสไลด์ */
-        }
-
-        /* เส้นคั่น */
-        hr {
-            margin-top: 40px;
-            margin-bottom: 40px;
-            border: 1px solid #eee;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Gallery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>Digital Literacy class</h2>
-    <p>Topic</p>
-    <p style="color: red">The style is attribute of paragraph tag</p>
-    <span>The element contains tag, attribute and content</span>
+    <h1>Picture Gallery</h1>
 
-    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Picture Category</th>
+                <th>PICTURE 1</th>
+                <th>PICTURE 2</th>
+                <th>PICTURE 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2" class="category">Mountain and Human</td>
+                <td><img src="images/onemountain.jpg.jpg" alt=" mountain"></td>
+                <td><img src="images/eiffel.jpg" alt="Indian person"></td>
+            </tr>
+            <tr>
+                <td class="description">Ceate picture mountain with tropical forest.</td>
+                <td class="description">Eiffel Tower placed near Tokyo Tower, with an Indian person standing nearby.</td>
+            </tr>
 
-    <h3>Web Pages Menu</h3>
-    <menu>
-        <li><a href="https://www.google.com/">Google</a> webpage</li>
-        <li><a href="https://www.pn.psu.ac.th/">PSU Pattani</a></li>
-        <li><a href="https://www.cnn.com/">CNN</a></li>
-    </menu>
-
-    <hr>
-
-    <h3>Picture and Video</h3>
-    <img src="picture1.jpg" alt="Flowers" width="400" height="400"> <br><br>
-    Video
-    <video width="320" height="240" controls>
-        <source src="view.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <hr>
-
-    <h3>Tables Example</h3>
-    <table border="3px">
-        <tr>
-            <th style="font-size: 30px; font-style: italic; color: #0000FF; background-color: red">Topic</th>
-            <th>Detail</th>
-            <th>Remark</th>
-        </tr>
-        <tr>
-            <td>Ai</td>
-            <td> Artificial Intelligence </td>
-            <td>New technology</td>
-        </tr>
-        <tr>
-            <td>Computer</td>
-            <td>Electronic machine</td>
-            <td>Origin of information technology</td>
-        </tr>
+            <tr>
+                <td rowspan="2" class="category">Humans</td>
+                <td><img src="images/Messi" alt="Lionel Messi."></td>
+                <td><img src="images/Ronaldo" alt="Cristiano Ronaldo"></td>
+                <td><img src="images/rich people.jpg.jpg" alt="rich people"></td>
+            </tr>
+            <tr>
+                <td class="description">a mountain with a tropical forest, a waterfall, a stadium, and Lionel Messi.</td>
+                <td class="description">Cristiano Ronaldo holding the Ballon d'Or in Bangkok, with a big house and a tiger.</td>
+                <td class="description">Thailand with only rich people and sunflower fields.</td>
+            </tr>
+        </tbody>
     </table>
 
-    <hr>
-    
-    <h2 class="w3-center">Manual Slideshow</h2>
-    <div class="w3-content w3-display-container">
-        <img class="mySlides" src="img1.jpg" style="width:100%">
-        <img class="mySlides" src="img2.jpg" style="width:100%">
-        <img class="mySlides" src="img3.jpg" style="width:100%">
-        <img class="mySlides" src="img4.jpg" style="width:100%">
-
-        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-    </div>
-
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
-        }
-    </script>
+    <h2>Student List</h2>
+    <table class="student-list">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Student ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>student id</td>
+                <td>name last-name (L)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>student id</td>
+                <td>name last-name </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>student id</td>
+                <td>name last-name </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>student id</td>
+                <td>name last-name </td>
+            </tr>
+             <tr>
+                <td>5</td>
+                <td>student id</td>
+                <td>name last-name </td>
+            </tr>
+             <tr>
+                <td>6</td>
+                <td>student id</td>
+                <td>name last-name </td>
+            </tr>
+         
+        </tbody>
+    </table>
 
 </body>
 </html>
