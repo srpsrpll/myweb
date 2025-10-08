@@ -1,20 +1,129 @@
-<p> Topics/p>
-<p style«"color: red*>The style is attribute of paragraph tag</p> < span>The element contains tag, attribute and content</span>
-</body> </html>
-<table border=”2“>
-  <tr>
-    <th>PICTURE No.</th>
-        <th>PICTURE</th>
-        <th>DESCRIPTION</th>
-    <th>PICTURE No.</th>
-        <th>PICTURE</th>
-        <th>DESCRIPTION</th>
-</tr>
-  <tr>
-    <td>1</td>
-    <td><img src=”coastal1.jpg“ width=”250“ helght=”139“ alt=”Mos1 picture“> </td>
-    <td>A Thai island famous for beaches and tourism.</td>
-   <td>4</td>
-    <td><img src=”flower2.jpg“ width=”250“ helght=”139“ alt=”Mos1 picture“> </td>
-    <td>A large yellow flower that follows the sun.</td>
-    </tr>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Combined Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        /* จัดรูปแบบโดยรวม */
+        body {
+            font-family: sans-serif;
+            text-align: center; /* จัดเนื้อหาส่วนใหญ่ให้อยู่กลางหน้า */
+        }
+
+        /* การจัดรูปแบบเมนู */
+        menu {
+            display: inline-block; /* ทำให้ box ของ menu อยู่ตรงกลางได้ */
+            text-align: left;      /* แต่จัดข้อความข้างในให้อยู่ชิดซ้าย */
+            list-style-type: disc;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding-left: 40px;
+            color: red;
+        }
+
+        /* การจัดรูปแบบตาราง */
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        /* การจัดรูปแบบสไลด์โชว์ */
+        .mySlides {
+            display: none;
+        }
+        .w3-content {
+            max-width: 600px; /* จำกัดความกว้างของสไลด์ */
+        }
+
+        /* เส้นคั่น */
+        hr {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Digital Literacy class</h2>
+    <p>Topic</p>
+    <p style="color: red">The style is attribute of paragraph tag</p>
+    <span>The element contains tag, attribute and content</span>
+
+    <hr>
+
+    <h3>Web Pages Menu</h3>
+    <menu>
+        <li><a href="https://www.google.com/">Google</a> webpage</li>
+        <li><a href="https://www.pn.psu.ac.th/">PSU Pattani</a></li>
+        <li><a href="https://www.cnn.com/">CNN</a></li>
+    </menu>
+
+    <hr>
+
+    <h3>Picture and Video</h3>
+    <img src="picture1.jpg" alt="Flowers" width="400" height="400"> <br><br>
+    Video
+    <video width="320" height="240" controls>
+        <source src="view.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <hr>
+
+    <h3>Tables Example</h3>
+    <table border="3px">
+        <tr>
+            <th style="font-size: 30px; font-style: italic; color: #0000FF; background-color: red">Topic</th>
+            <th>Detail</th>
+            <th>Remark</th>
+        </tr>
+        <tr>
+            <td>Ai</td>
+            <td> Artificial Intelligence </td>
+            <td>New technology</td>
+        </tr>
+        <tr>
+            <td>Computer</td>
+            <td>Electronic machine</td>
+            <td>Origin of information technology</td>
+        </tr>
+    </table>
+
+    <hr>
+    
+    <h2 class="w3-center">Manual Slideshow</h2>
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="img1.jpg" style="width:100%">
+        <img class="mySlides" src="img2.jpg" style="width:100%">
+        <img class="mySlides" src="img3.jpg" style="width:100%">
+        <img class="mySlides" src="img4.jpg" style="width:100%">
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
